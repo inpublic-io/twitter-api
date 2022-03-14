@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/improbable-eng/grpc-web v0.15.0
 	github.com/influxdata/influxdb-client-go/v2 v2.8.0
-	github.com/inpublic-io/inpublicapis/twitter v0.0.4
+	github.com/inpublic-io/inpublicapis/twitter v0.0.7
 	github.com/joho/godotenv v1.4.0
 	github.com/vniche/twitter-go v0.0.6
 	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2

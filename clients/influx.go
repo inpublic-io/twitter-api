@@ -10,6 +10,7 @@ import (
 var (
 	influxClient influxdb.Client
 	influxOrg    string
+	influxBucket string
 )
 
 func InitializeInfluxClient() {
@@ -23,6 +24,11 @@ func InitializeInfluxClient() {
 		log.Fatalf("INFLUX_ORG env var is required")
 	}
 
+	influxBucket, ok = os.LookupEnv("INFLUX_BUCKET")
+	if !ok {
+		log.Fatalf("INFLUX_BUCKET env var is required")
+	}
+
 	influxClient = influxdb.NewClient("https://us-central1-1.gcp.cloud2.influxdata.com", influxToken)
 }
 
@@ -32,4 +38,8 @@ func InfluxClient() influxdb.Client {
 
 func InfluxOrg() string {
 	return influxOrg
+}
+
+func InfluxBucket() string {
+	return influxBucket
 }
